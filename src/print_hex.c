@@ -10,21 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+
+#define MAX_HEX 10//include
 
 void	print_hex(unsigned char *addr, size_t size)
 {
 	int i;
+	char s[MAX_HEX + 1];
 
 	i = 0;
-	ft_printf("\n %d bytes\n00 - ", size);
+	printf("\n %ld bytes\n00 - ", size);
 	while (size)
 	{
-		ft_printf("%.2X ", *addr);
+		printf("%.02X ", *addr);
+		if (ft_isprint(*addr))
+			s[i % MAX_HEX] = *addr;
+		else
+			s[i % MAX_HEX] = '.';
 		addr++;
 		size--;
 		i++;
-		if (!(i % 10))
-			ft_printf("\n%d - ", i);
+		if (!(i % MAX_HEX))
+		{
+			s[MAX_HEX] = 0;
+			printf(" |%s|\n%.2d - ", s, i);
+		}
 	}
-	ft_printf("\n");
+	printf("\n");
 }
