@@ -122,7 +122,6 @@ SRC_FILE =	ft_strnsplit.c \
 			print_hex.c \
 			ft_tabcpy.c 
 
-
 OBJ_DIR = .obj
 OBJ_FILE = $(SRC_FILE:.c=.o)
 

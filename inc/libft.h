@@ -161,9 +161,10 @@ char				**ft_tabstrdup(char **dst, char **cpy);
 int					opt_addvar(t_opt **opt, char *arg, void *var, char type_var);
 int					opt_addvar2(t_opt **opt, char *arg, void **var, char type_var);
 void				opt_init(t_opt **opt);
-int			opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name);
-void			opt_free(t_opt **opt);
-int			ft_isint(char *s);
-void			print_hex(unsigned char *addr, size_t size);
+int					opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name);
+void				opt_free(t_opt **opt);
+int					ft_isint(char *s);
+void				print_hex(unsigned char *addr, size_t size);
+char				*ft_fstrndup(const char *s, int size);
 
 #endif

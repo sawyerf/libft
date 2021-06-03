@@ -37,3 +37,22 @@ char	*ft_strndup(const char *s, int size)
 	str[count] = '\0';
 	return (str);
 }
+
+char	*ft_fstrndup(const char *s, int size)
+{
+	int		i;
+	char	*str;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	if (!(str = ft_strnew(size)))
+		return (NULL);
+	while (i < size)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
