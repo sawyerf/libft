@@ -26,9 +26,6 @@ SRC_DIR = src
 SRC_FILE =	ft_atoi.c \
 			ft_bzero.c \
 			ft_cisin.c \
-			ft_convert_nbr.c \
-			ft_convert_str.c \
-			ft_get_nbr.c \
 			ft_isalldigit.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
@@ -43,8 +40,6 @@ SRC_FILE =	ft_atoi.c \
 			ft_memcmp.c \
 			ft_memcpy.c \
 			ft_memset.c \
-			ft_parser.c \
-			ft_parser_tools.c \
 			ft_putchar.c \
 			ft_putchar_fd.c \
 			ft_putendl.c \
@@ -54,8 +49,6 @@ SRC_FILE =	ft_atoi.c \
 			ft_putstr.c \
 			ft_putstr_fd.c \
 			ft_rereplace.c \
-			ft_rperr.c \
-			ft_sanity.c \
 			ft_strcat.c \
 			ft_strchr.c \
 			ft_strclr.c \
@@ -82,10 +75,7 @@ SRC_FILE =	ft_atoi.c \
 			ft_tolower.c \
 			ft_toupper.c \
 			ft_util.c \
-			ft_wbuffer.c \
 			get_next_line.c \
-			itoa_base.c \
-			print_hex.c
 
 OBJ_DIR = .obj
 OBJ_FILE = $(SRC_FILE:.c=.o)
