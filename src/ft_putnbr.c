@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <unistd.h>
 
-static int	ft_intlen(int n)
+static int	ft_intlen(long long int n)
 {
 	int len;
 
@@ -28,7 +28,7 @@ static int	ft_intlen(int n)
 	return (len);
 }
 
-static int	ft_power(int x, int y)
+static long long int	ft_power(long long int x, long long int y)
 {
 	int num;
 
@@ -43,10 +43,10 @@ static int	ft_power(int x, int y)
 	return (x);
 }
 
-void		ft_putnbr(int n)
+void		ft_putnbr(long long int n)
 {
-	int				len;
-	int				num;
+	long long int	len;
+	long long int	num;
 	long long int	lint;
 
 	lint = n;
