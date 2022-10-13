@@ -6,7 +6,7 @@
 #    By: apeyret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/10 18:24:48 by apeyret           #+#    #+#              #
-#    Updated: 2019/06/20 15:16:08 by apeyret          ###   ########.fr        #
+#    Updated: 2022/10/13 12:51:06 by apeyret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,7 @@ CFLAGS = -I inc/ -Wall -Werror -Wextra -g
 
 INC_DIR = inc
 
-INC_FILE = get_next_line.h \
-		   libft.h
+INC_FILE = libft.h
 
 SRC_DIR = src
 
@@ -75,7 +74,6 @@ SRC_FILE =	ft_atoi.c \
 			ft_tolower.c \
 			ft_toupper.c \
 			ft_util.c \
-			get_next_line.c \
 
 OBJ_DIR = .obj
 OBJ_FILE = $(SRC_FILE:.c=.o)

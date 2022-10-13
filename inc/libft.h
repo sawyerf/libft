@@ -14,11 +14,11 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <inttypes.h>
-# include <string.h>
-# include <unistd.h>
-# include "get_next_line.h"
-# include "str.h"
+
+# define BUFF_SIZE 1024
+# define MAX_FD 4865
+
+# define MEMERR -1001
 
 # define OPT_INT 1
 # define OPT_STR 2
@@ -50,7 +50,6 @@ typedef struct		s_opt
 {
 	char			opt[MAX_OPT];
 	char			type;
-//	int				(func)(char *opt, char *arg);
 	void			**var2;
 	void			*var;
 	char			type_var;
@@ -129,9 +128,6 @@ int					ft_isblank(char c);
 char				*ft_strlower(char *s);
 char				*ft_strndup(const char *s, int len);
 char				*ft_strrev(char *str);
-int					ft_utoa_base(uintmax_t nbr, int base, char *str, int rev);
-int					ft_inner_itoa(intmax_t nbr, int base, char *str);
-int					ft_itoa_base(intmax_t nbr, int base, char *str, int rev);
 void				ft_swap_char(char *a, char *b);
 int					ft_printf(const char *s, ...);
 int					ft_dprintf(int fd, const char *format, ...);
