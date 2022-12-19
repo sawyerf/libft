@@ -56,8 +56,9 @@ int		opt_parseopt(t_opt *mopt, char ***argv, char *name)
 		ft_printf("%s: option requires an argument -- '%s'\n", name, arg[0]);
 		return (OPT_MISSARG);
 	}
-	if (mopt->type_var == OPT_STR)
+	if (mopt->type_var == OPT_STR) {
 		*mopt->var2 = arg[1];
+	}
 	else if (mopt->type_var == OPT_INT)
 	{
 		if (!ft_isint(arg[1]))
@@ -92,12 +93,13 @@ int		opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name)
 	int		ret;
 
 	end = 0;
-	optpars->arg[0] = NULL;
+	optpars->arg = NULL;
 	optpars->opt[0] = NULL;
 	while (*arg)
 	{
-		if (!ft_strlen(*arg) || end)
-			ft_tabadd(optpars->arg, *arg);
+		if (!ft_strlen(*arg) || end) {
+			optpars->arg = arg;
+		}
 		else if (!ft_strcmp(*arg, "--"))
 			end = 1;
 		else if (!ft_strncmp(*arg, "-", 1))
@@ -105,9 +107,11 @@ int		opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name)
 			if ((mopt = isoptin(opt, *arg)))
 			{
 				ft_tabadd(optpars->opt, *arg);
-				if (mopt->var)
+				if (mopt->var || mopt->var2) 
+				{
 					if ((ret = opt_parseopt(mopt, &arg, name)))
 						return (ret);
+				}
 			}
 			else
 			{
@@ -116,7 +120,7 @@ int		opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name)
 			}
 		}
 		else
-			ft_tabadd(optpars->arg, *arg);
+			optpars->arg = arg;
 		arg++;
 	}
 	return (0);
