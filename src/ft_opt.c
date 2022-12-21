@@ -7,6 +7,7 @@ int		opt_addvar2(t_opt **opt, char *arg, void **var, char type_var)
 	if (!(nopt = malloc(sizeof(t_opt))))
 		return (1);
 	ft_strcpy(nopt->opt, arg);
+	nopt->var = NULL;
 	nopt->var2 = var;
 	nopt->type = OPT_VAR;
 	nopt->type_var = type_var;
@@ -23,6 +24,7 @@ int		opt_addvar(t_opt **opt, char *arg, void *var, char type_var)
 		return (1);
 	ft_strcpy(nopt->opt, arg);
 	nopt->var = var;
+	nopt->var2 = NULL;
 	nopt->type = OPT_VAR;
 	nopt->type_var = type_var;
 	nopt->next = *opt;
@@ -107,7 +109,7 @@ int		opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name)
 			if ((mopt = isoptin(opt, *arg)))
 			{
 				ft_tabadd(optpars->opt, *arg);
-				if (mopt->var || mopt->var2) 
+				if (mopt->var || mopt->var2)
 				{
 					if ((ret = opt_parseopt(mopt, &arg, name)))
 						return (ret);
