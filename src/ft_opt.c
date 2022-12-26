@@ -101,6 +101,7 @@ int		opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name)
 	{
 		if (!ft_strlen(*arg) || end) {
 			optpars->arg = arg;
+			return (0);
 		}
 		else if (!ft_strcmp(*arg, "--"))
 			end = 1;
@@ -121,8 +122,10 @@ int		opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name)
 				return (OPT_NFOUND);
 			}
 		}
-		else
+		else {
 			optpars->arg = arg;
+			return (0);
+		}
 		arg++;
 	}
 	return (0);
