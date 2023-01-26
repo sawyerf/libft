@@ -37,5 +37,10 @@ void	print_hex(unsigned char *addr, size_t size)
 			printf(" |%s|\n%.2d - ", s, i);
 		}
 	}
+	if ((i % MAX_HEX))
+	{
+		s[i % MAX_HEX] = 0;
+		printf(" |%s|\n", s);
+	}
 	printf("\n");
 }

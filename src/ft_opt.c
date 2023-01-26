@@ -55,7 +55,7 @@ int		opt_parseopt(t_opt *mopt, char ***argv, char *name)
 	arg = *argv;
 	if (!arg[1])
 	{
-		ft_printf("%s: option requires an argument -- '%s'\n", name, arg[0]);
+		ft_dprintf(2, "%s: option requires an argument -- '%s'\n", name, arg[0]);
 		return (OPT_MISSARG);
 	}
 	if (mopt->type_var == OPT_STR) {
@@ -65,7 +65,7 @@ int		opt_parseopt(t_opt *mopt, char ***argv, char *name)
 	{
 		if (!ft_isint(arg[1]))
 		{
-			ft_printf("%s: invalid argument: '%s'\n", name, arg[1]);
+			ft_dprintf(2, "%s: invalid argument: '%s'\n", name, arg[1]);
 			return (OPT_IVLARG);
 		}
 		*(int*)mopt->var = ft_atoi(arg[1]);
@@ -118,7 +118,7 @@ int		opt_parser(t_opt *opt, char **arg, t_optpars *optpars, char *name)
 			}
 			else
 			{
-				ft_printf("%s: invalid option -- '%s'\n", name, *arg);
+				ft_dprintf(2, "%s: invalid option -- '%s'\n", name, *arg);
 				return (OPT_NFOUND);
 			}
 		}
