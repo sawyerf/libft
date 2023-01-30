@@ -12,6 +12,28 @@
 
 #include "libft.h"
 
+int	ft_isintdepass(const char *str)
+{
+	int i;
+	int ret;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		i++;
+	}
+	ret = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		ret = ret * 10 + (str[i] - 48);
+		if (ret < 0) {
+			return 0;
+		}
+		i++;
+	}
+	return (1);
+}
+
 int	ft_isalldigit(char *s)
 {
 	while (*s)
@@ -30,6 +52,8 @@ int	ft_isint(char *s)
 	if (*s == '-' || *s == '+')
 		s++;
 	if (ft_strlen(s) > 10)
+		return (0);
+	if (!ft_isintdepass(s))
 		return (0);
 	return (ft_isalldigit(s));
 }

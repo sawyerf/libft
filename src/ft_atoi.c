@@ -35,8 +35,7 @@ int	ft_atoi(const char *str)
 	{
 		ret = ret * 10 + (str[i] - 48);
 		if (ret < 0) {
-			ft_dprintf(2, "Failed parsed number\n");
-			exit(1);
+			return -1;
 		}
 		i++;
 		j++;
