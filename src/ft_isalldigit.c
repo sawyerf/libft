@@ -29,5 +29,7 @@ int	ft_isint(char *s)
 		return (0);
 	if (*s == '-' || *s == '+')
 		s++;
+	if (ft_strlen(s) > 10)
+		return (0);
 	return (ft_isalldigit(s));
 }

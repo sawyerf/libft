@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
 	int i;
@@ -32,6 +34,10 @@ int	ft_atoi(const char *str)
 	while (str[i] > 47 && str[i] < 58 && ret < 2147483647 && ret > -2147483648)
 	{
 		ret = ret * 10 + (str[i] - 48);
+		if (ret < 0) {
+			ft_dprintf(2, "Failed parsed number\n");
+			exit(1);
+		}
 		i++;
 		j++;
 	}
